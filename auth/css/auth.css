@@ -1,0 +1,304 @@
+/*==================================================
+   RE-ENGINEERED NEO-BRUTALIST ARCHITECTURE VARIABLES
+==================================================*/
+:root {
+    --system-matte-bg: #0A0A0C;
+    --card-surface-raw: #121216;
+    --accent-signal-orange: #FF6B35;
+    --accent-signal-cyan: #00E5FF;
+    --border-clinical-line: #222226;
+    --border-clinical-active: #44444C;
+    
+    --text-primary-stark: #FFFFFF;
+    --text-secondary-dim: #8E8E9A;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.omni-auth-matrix {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--system-matte-bg);
+    color: var(--text-primary-stark);
+    overflow-x: hidden;
+}
+
+/*==================================================
+   UNIFIED MONOLITH FRAMEWORK (REPLACES TWO-COLUMN SPLIT)
+==================================================*/
+.omni-vault-wrapper {
+    background: var(--card-surface-raw);
+    border: 1px solid var(--border-clinical-line);
+    border-radius: 0px; /* Completely removed pill edges */
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Redesigned Structural Frame Sidebar (Flipped Layout Order) */
+.vault-sidebar {
+    background: #16161C;
+    border-left: 1px solid var(--border-clinical-line);
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand-link {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-primary-stark);
+    text-decoration: none;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.brand-link span {
+    color: var(--accent-signal-orange);
+}
+
+.display-heading {
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 15px;
+}
+
+.editorial-subtext {
+    font-size: 0.95rem;
+    color: var(--text-secondary-dim);
+    line-height: 1.6;
+    font-family: sans-serif;
+}
+
+/* Clean Telemetry Modules (Removed standard glowing boxes) */
+.system-highlights, .live-stream-panel {
+    border-top: 1px solid var(--border-clinical-line);
+    margin-top: 30px;
+    padding-top: 25px;
+}
+
+.stream-title-badge {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-signal-orange);
+    margin-bottom: 15px;
+}
+
+.stream-data-row, .highlight-node {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-clinical-line);
+    font-size: 0.9rem;
+}
+
+.highlight-node {
+    justify-content: flex-start;
+    gap: 14px;
+}
+
+.node-icon-shell {
+    color: var(--accent-signal-cyan);
+    font-size: 1.1rem;
+}
+
+.stream-label, .node-caption {
+    color: var(--text-secondary-dim);
+}
+
+.stream-metric {
+    font-weight: 700;
+    color: var(--text-primary-stark);
+}
+
+.glow-text {
+    color: var(--accent-signal-cyan) !important;
+}
+
+/*==================================================
+   INTERACTIVE PORTAL PANEL
+==================================================*/
+.vault-interactive-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px;
+}
+
+.interactive-form-card {
+    width: 100%;
+    max-width: 420px;
+}
+
+.panel-main-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.panel-subtitle {
+    color: var(--text-secondary-dim);
+    font-size: 0.9rem;
+    margin-bottom: 35px;
+    font-family: sans-serif;
+}
+
+/* Clinical Inputs Structural Setup */
+.custom-field-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-primary-stark);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.crypt-input-field {
+    width: 100%;
+    height: 48px;
+    background: transparent;
+    border: 1px solid var(--border-clinical-line);
+    border-radius: 0px; /* Linear square borders */
+    color: var(--text-primary-stark) !important;
+    padding: 0 16px;
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.crypt-input-field:focus {
+    outline: none;
+    border-color: var(--border-clinical-active);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+select.crypt-input-field option {
+    background-color: var(--card-surface-raw);
+    color: var(--text-primary-stark);
+}
+
+/* Auxiliary Interface Elements */
+.form-auxiliary-actions {
+    font-size: 0.85rem;
+    font-family: sans-serif;
+}
+
+.checkbox-label-text {
+    color: var(--text-secondary-dim);
+}
+
+.forgot-key-link, .accent-link {
+    color: var(--text-primary-stark);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    transition: color 0.2s ease;
+}
+
+.forgot-key-link:hover, .accent-link:hover {
+    color: var(--accent-signal-orange);
+}
+
+/* Sharp Industrial Submission Trigger */
+.action-btn-submit {
+    width: 100%;
+    height: 50px;
+    background: var(--text-primary-stark);
+    border: 1px solid var(--text-primary-stark);
+    border-radius: 0px;
+    color: #000;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.2s ease;
+}
+
+.action-btn-submit:hover {
+    background: transparent;
+    color: var(--text-primary-stark);
+    border-color: var(--text-primary-stark);
+}
+
+/* Clean Form Separation Dividers */
+.vault-divider {
+    text-align: center;
+    margin: 30px 0;
+    position: relative;
+}
+
+.vault-divider span {
+    background: var(--card-surface-raw);
+    padding: 0 15px;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary-dim);
+    text-transform: uppercase;
+}
+
+.vault-divider::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: var(--border-clinical-line);
+    left: 0;
+    top: 50%;
+    z-index: -1;
+}
+
+.alternate-navigation {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-secondary-dim);
+    font-family: sans-serif;
+}
+
+/*==================================================
+   MOBILE BREAKPOINTS OVERHAUL
+==================================================*/
+@media (max-width: 991px) {
+    .vault-sidebar {
+        border-left: none;
+        border-top: 1px solid var(--border-clinical-line);
+        padding: 40px !important;
+    }
+    
+    .display-heading {
+        font-size: 1.6rem;
+    }
+
+    .system-highlights, .live-stream-panel {
+        display: none !important;
+    }
+
+    .vault-interactive-panel {
+        padding: 40px !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .vault-sidebar {
+        display: none !important;
+    }
+
+    .omni-vault-wrapper {
+        background: transparent;
+        border: none;
+        box-shadow: none;
+    }
+
+    .vault-interactive-panel {
+        padding: 0px !important;
+    }
+    
+    .vault-divider span {
+        background: var(--system-matte-bg);
+    }
+}

@@ -1,0 +1,405 @@
+/*==================================================
+   CYBER-NORDIC CONSOLE ARCHITECTURE VARIABLES
+==================================================*/
+:root {
+    --bg-deep-space: #070709;
+    --bg-console-matte: #0E0E12;
+    --bg-panel-stark: #131318;
+    --bg-row-strip: #181822;
+    
+    --border-grid-line: #1F1F26;
+    --border-grid-active: #3E3E4F;
+    
+    --text-stark-white: #FFFFFF;
+    --text-muted-gray: #7E7E8C;
+    
+    --signal-cyan: #00E5FF;
+    --signal-emerald: #10B981;
+    --signal-amber: #FFB300;
+    --signal-crimson: #EF4444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.omni-panel-layout {
+    font-family: 'Space Grotesk', -apple-system, sans-serif;
+    background-color: var(--bg-deep-space);
+    color: var(--text-stark-white);
+    overflow-x: hidden;
+}
+
+.omni-workspace-wrapper {
+    display: flex;
+    min-height: 100vh;
+    position: relative;
+}
+
+/*==================================================
+   ASYMMETRIC LINEAR SIDEBAR DOCK
+==================================================*/
+.omni-sidebar-dock {
+    width: 260px;
+    background-color: var(--bg-console-matte);
+    border-right: 1px solid var(--border-grid-line);
+    padding: 40px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dock-branding h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--text-stark-white);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.dock-branding span {
+    color: var(--signal-amber);
+}
+
+.dock-navigation {
+    list-style: none;
+    padding: 0;
+    margin: 50px 0 auto 0;
+    width: 100%;
+}
+
+.dock-navigation li {
+    margin-bottom: 6px;
+}
+
+.dock-navigation a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: var(--text-muted-gray);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.dock-navigation a .nav-icon {
+    font-size: 1rem;
+    margin-right: 14px;
+}
+
+.dock-navigation a:hover {
+    color: var(--text-stark-white);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.dock-navigation li.active a {
+    background: var(--bg-panel-stark);
+    color: var(--text-stark-white);
+    border-left: 3px solid var(--signal-amber);
+    border-color: var(--border-grid-line) var(--border-grid-line) var(--border-grid-line) var(--signal-amber);
+}
+
+.action-btn-exit {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 1px solid var(--border-grid-line);
+    color: var(--signal-crimson);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+.action-btn-exit:hover {
+    background: var(--signal-crimson);
+    color: #000000;
+    border-color: var(--signal-crimson);
+}
+
+/*==================================================
+   MAIN WORKSPACE VIEWPORT LAYER
+==================================================*/
+.omni-core-viewport {
+    flex: 1;
+    padding: 50px;
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    min-height: 100vh;
+}
+
+.viewport-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+}
+
+.viewport-subtitle {
+    font-family: sans-serif;
+    font-size: 0.9rem;
+    color: var(--text-muted-gray);
+    margin-bottom: 0;
+}
+
+/* Structural Header Identity Component */
+.identity-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    background: var(--bg-console-matte);
+    border: 1px solid var(--border-grid-line);
+    padding: 8px 16px;
+}
+
+.badge-avatar-frame {
+    width: 34px;
+    height: 34px;
+    border: 1px solid var(--border-grid-active);
+    margin-right: 12px;
+    overflow: hidden;
+}
+
+.badge-avatar-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.badge-info-block .profile-name {
+    display: block;
+    font-weight: 700;
+    font-size: 0.85rem;
+}
+
+.badge-info-block .profile-role {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/*==================================================
+   LINEAR CONSOLE DATA DISPLAY CARDS
+==================================================*/
+.telemetry-glass-card {
+    background: var(--bg-console-matte);
+    border: 1px solid var(--border-grid-line);
+    padding: 24px;
+    position: relative;
+}
+
+.border-accent-left { border-top: 3px solid var(--signal-cyan); }
+.border-success-left { border-top: 3px solid var(--signal-emerald); }
+.border-warning-left { border-top: 3px solid var(--signal-amber); }
+
+.metric-tag {
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted-gray);
+    margin-bottom: 6px;
+}
+
+.metric-value {
+    font-size: 2.4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.background-card-icon {
+    position: absolute;
+    right: 20px;
+    bottom: 15px;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.015);
+    pointer-events: none;
+}
+
+/*==================================================
+   DATA MODULE PANELS & MATRIX TABLES
+==================================================*/
+.workspace-section-wrapper {
+    background: var(--bg-console-matte);
+    border: 1px solid var(--border-grid-line);
+    padding: 28px;
+    height: 100%;
+}
+
+.section-heading-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.omni-matrix-table thead th {
+    background: var(--bg-panel-stark);
+    color: var(--text-muted-gray);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--border-grid-line);
+}
+
+.omni-matrix-table tbody td {
+    color: var(--text-stark-white);
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border-grid-line);
+    font-size: 0.9rem;
+}
+
+/* Sharp Linear Status Components */
+.badge-yield-pass {
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    color: var(--signal-emerald);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.badge-yield-pending {
+    border: 1px solid rgba(255, 179, 0, 0.3);
+    color: var(--signal-amber);
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Structural Configuration Inputs */
+.form-card-input {
+    background: var(--bg-panel-stark);
+    border: 1px solid var(--border-grid-line);
+    color: var(--text-stark-white) !important;
+    border-radius: 0px;
+    padding: 10px 14px;
+    font-size: 0.9rem;
+}
+
+.form-card-input:focus {
+    background: var(--bg-row-strip);
+    border-color: var(--border-grid-active);
+    box-shadow: none;
+}
+
+select.form-card-input option {
+    background: var(--bg-panel-stark);
+    color: var(--text-stark-white);
+}
+
+/* Profile Photo Integration Terminal */
+.avatar-matrix-uploader {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid var(--border-grid-line);
+    padding-bottom: 24px;
+}
+
+.uploader-frame {
+    width: 80px;
+    height: 80px;
+    border: 1px solid var(--border-grid-active);
+    overflow: hidden;
+}
+
+.uploader-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Asymmetric Flat Progress Trackers */
+.custom-progress-bar {
+    background: var(--bg-panel-stark);
+    border: 1px solid var(--border-grid-line);
+    border-radius: 0px;
+    height: 16px;
+}
+
+.custom-gradient-bar {
+    background: var(--text-stark-white);
+    color: #000000 !important;
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 14px;
+}
+
+/* Clean Modular Notification Feeds */
+.node-feed-list .feed-item-node {
+    background: var(--bg-panel-stark);
+    border: 1px solid var(--border-grid-line);
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    color: var(--text-stark-white);
+    font-size: 0.85rem;
+    font-family: sans-serif;
+}
+
+/* Floating Mobile Interface Access Button */
+.terminal-trigger {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    width: 50px;
+    height: 50px;
+    background: var(--text-stark-white);
+    border: 1px solid var(--text-stark-white);
+    color: #000000;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1050;
+    cursor: pointer;
+}
+
+/*==================================================
+   DYNAMIC MOBILE OVERHAUL BREAKPOINTS
+==================================================*/
+@media (max-width: 991px) {
+    .omni-sidebar-dock {
+        transform: translateX(-100%);
+    }
+    
+    .omni-sidebar-dock.active {
+        transform: translateX(0);
+        box-shadow: 25px 0 60px rgba(0, 0, 0, 0.9);
+    }
+    
+    .omni-core-viewport {
+        margin-left: 0;
+        width: 100%;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .viewport-title {
+        font-size: 1.4rem;
+    }
+    
+    .workspace-section-wrapper {
+        padding: 20px 14px;
+    }
+    
+    .avatar-matrix-uploader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+}

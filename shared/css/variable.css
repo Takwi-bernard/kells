@@ -1,0 +1,26 @@
+:root {
+    /* Color Spectrum - Clean Slate Light Mode */
+    --matrix-bg: #f4f6fa;
+    --matrix-surface: #ffffff;
+    --matrix-glass: rgba(255, 255, 255, 0.8);
+    
+    /* Core Accent Definitions */
+    --accent-glow: #4f46e5;      /* Tech Indigo */
+    --accent-secondary: #0284c7; /* Deep Cyan */
+    --success-glow: #059669;     /* Emerald */
+    --warning-glow: #d97706;     /* Amber */
+    --danger-glow: #dc2626;      /* Crimson */
+    
+    /* Font Schemes */
+    --font-heading: 'Sora', sans-serif;
+    --font-body: 'Outfit', sans-serif;
+    
+    /* Text Palettes */
+    --text-primary: #0f172a;     /* Deep Slate */
+    --text-muted: #64748b;        /* Cool Gray */
+    
+    /* Structural Elements */
+    --glass-border: rgba(15, 23, 42, 0.08);
+    --glass-blur: blur(12px);
+    --shadow-deep: 0 10px 30px rgba(15, 23, 42, 0.05);
+}

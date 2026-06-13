@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Candidate Terminal | OmniGrade</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="omni-panel-layout">
+
+    <div class="omni-workspace-wrapper">
+        
+        <!-- Mobile Trigger Control -->
+        <button class="terminal-trigger d-lg-none" id="mobileMenuToggle">
+            <i class="bi bi-grid-fill"></i>
+        </button>
+
+        <aside class="omni-sidebar-dock" id="sidebarDock">
+            <div class="dock-branding">
+                <h3>OMNI<span>GRADE</span></h3>
+            </div>
+            
+            <ul class="dock-navigation">
+                <li class="active">
+                    <a href="#">
+                        <i class="bi bi-terminal nav-icon"></i>
+                        <span class="nav-label">Terminal Board</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="profile.html">
+                        <i class="bi bi-shield-lock nav-icon"></i>
+                        <span class="nav-label">Identity Profile</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="subjects.html">
+                        <i class="bi bi-folder2-open nav-icon"></i>
+                        <span class="nav-label">Matrix Modules</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="results.html">
+                        <i class="bi bi-bar-chart-line nav-icon"></i>
+                        <span class="nav-label">Telemetry Output</span>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="dock-footer-actions">
+                <button class="action-btn-exit" id="logoutBtn">
+                    Terminate Session
+                </button>
+            </div>
+        </aside>
+
+        <main class="omni-core-viewport">
+            
+            <!-- INDUSTRIAL HEADER SECTION -->
+            <header class="workspace-header-bar row align-items-center g-3 mb-5 pb-4 border-bottom border-secondary border-opacity-10">
+                <div class="col-sm-7">
+                    <span class="text-uppercase small tracking-wider text-muted opacity-75">// Operational Telemetry Command</span>
+                    <h1 class="viewport-title mt-1" id="welcomeText">Syncing Terminal Core...</h1>
+                    <p class="viewport-subtitle" id="viewportSubtitle">Real-time valuation workspace.</p>
+                </div>
+                <div class="col-sm-5 d-flex justify-content-sm-end justify-content-start">
+                    <div class="identity-badge-pill">
+                        <div class="badge-avatar-frame">
+                            <img id="userAvatar" src="" alt="Identity Frame">
+                        </div>
+                        <div class="badge-info-block">
+                            <span class="profile-name" id="userName">Syncing Name...</span>
+                            <span class="profile-role">Candidate Node</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ASYMMETRIC CONTENT REVERSAL GRID -->
+            <section class="row g-4">
+                
+                <!-- LEFT COLUMN: Secondary Status and Progress Feeds -->
+                <div class="col-xl-4 col-lg-5 order-2 order-xl-1">
+                    <div class="row g-4">
+                        <div class="col-12">
+                            <div class="workspace-section-wrapper border-top border-3 border-warning">
+                                <span class="text-muted small text-uppercase fw-bold tracking-wider">// Matrix Progress</span>
+                                <h4 class="section-heading-text mt-2 mb-3">Timeline Target</h4>
+                                <div class="progress custom-progress-bar mb-3">
+                                    <div id="progressBar" class="progress-bar custom-gradient-bar" style="width: 0%">0%</div>
+                                </div>
+                                <p class="small text-muted mb-0" id="progressText">Syncing track modules with active server updates...</p>
+                            </div>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="workspace-section-wrapper">
+                                <span class="text-muted small text-uppercase fw-bold tracking-wider">// Real-Time System Updates</span>
+                                <h4 class="section-heading-text mt-2 mb-3">System Matrix Feeds</h4>
+                                <ul class="list-group list-group-flush node-feed-list" id="notificationList">
+                                    <li class="list-group-item feed-item-node text-muted">Awaiting notification transmission...</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Primary Analytical Table -->
+                <div class="col-xl-8 col-lg-7 order-1 order-xl-2">
+                    <div class="workspace-section-wrapper">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <div>
+                                <span class="text-muted small text-uppercase fw-bold tracking-wider">// Log History</span>
+                                <h4 class="section-heading-text mt-1">Recent Examination Logs</h4>
+                            </div>
+                            <span class="badge bg-dark border border-secondary border-opacity-20 text-muted px-3 py-2 text-uppercase font-monospace" style="font-size: 0.7rem;">Live Stream</span>
+                        </div>
+                        
+                        <div class="table-responsive">
+                            <table class="omni-matrix-table table align-middle">
+                                <thead>
+                                    <tr>
+                                        <th>Module Code</th>
+                                        <th>Internal Assm.</th>
+                                        <th>Core Exam</th>
+                                        <th>Yield Grade</th>
+                                        <th>Status Badge</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="resultsTableBody">
+                                    <tr>
+                                        <td colspan="5" class="text-center py-4 text-muted">Awaiting stream handshake...</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- METRIC CARDS REPOSITIONED BELOW PANELS TO REDUCE SIMILARITY -->
+            <section class="row g-4 mt-4">
+                <div class="col-xl-4 col-md-6">
+                    <div class="telemetry-glass-card border-accent-left">
+                        <span class="metric-tag">Registered Modules</span>
+                        <h2 class="metric-value" id="totalSubjects">--</h2>
+                        <i class="bi bi-collection-fill background-card-icon"></i>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-6">
+                    <div class="telemetry-glass-card border-success-left">
+                        <span class="metric-tag">Aggregated Yield</span>
+                        <h2 class="metric-value" id="gpaValue">--</h2>
+                        <i class="bi bi-lightning-charge-fill background-card-icon"></i>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-12">
+                    <div class="telemetry-glass-card border-warning-left">
+                        <span class="metric-tag">Completed Valuations</span>
+                        <h2 class="metric-value" id="completedExams">--</h2>
+                        <i class="bi bi-patch-check-fill background-card-icon"></i>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="../config/supabase.js"></script>
+    <script type="module" src="../shared/js/services/authService.js"></script>
+    <script type="module" src="../shared/js/services/profileService.js"></script>
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>

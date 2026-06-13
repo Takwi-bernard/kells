@@ -1,0 +1,241 @@
+/* Monochromatic High-Contrast Laboratory Tokens */
+:root {
+    --raw-black: #050508;
+    --raw-charcoal: #0E0E14;
+    --raw-white: #FFFFFF;
+    --muted-grey: #6E6E77;
+    --border-steel: #27272A;
+    --neon-green: #10B981;
+    --neon-orange: #F97316;
+}
+
+body.matrix-mono-theme {
+    font-family: 'DM Sans', sans-serif;
+    background-color: var(--raw-black);
+    color: var(--raw-white);
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, .raw-brand, .node-data-output, .node-index {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+
+/* Linear Industrial Nav Structure */
+.matrix-nav {
+    background: rgba(5, 5, 8, 0.9);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-steel);
+    padding: 14px 0;
+}
+
+.raw-brand {
+    color: var(--raw-white) !important;
+    font-size: 1.3rem;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+}
+
+.brand-bracket {
+    color: var(--neon-orange);
+}
+
+.raw-nav-links .nav-link {
+    color: var(--muted-grey) !important;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 20px !important;
+    transition: all 0.2s ease;
+}
+
+.raw-nav-links .nav-link:hover, 
+.raw-nav-links .nav-link.active {
+    color: var(--raw-white) !important;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Hard-Edge Non-Pill Buttons */
+.btn-industrial-primary {
+    background: var(--raw-white);
+    color: var(--raw-black) !important;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none;
+    border-radius: 0px; /* Deleted all rounding */
+    padding: 12px 24px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.2s ease;
+}
+
+.btn-industrial-primary:hover {
+    background: var(--neon-orange);
+}
+
+.btn-link-raw {
+    color: var(--muted-grey);
+    text-decoration: none;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+    margin-right: 20px;
+    transition: color 0.2s ease;
+}
+
+.btn-link-raw:hover {
+    color: var(--raw-white);
+}
+
+.btn-industrial-outline {
+    background: transparent;
+    color: var(--raw-white) !important;
+    border: 1px solid var(--border-steel);
+    border-radius: 0px;
+    font-weight: 500;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 24px;
+    transition: all 0.2s ease;
+}
+
+.btn-industrial-outline:hover {
+    border-color: var(--raw-white);
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Viewport Restructuring */
+.quantum-viewport {
+    padding: 180px 0 140px;
+}
+
+.industrial-tag {
+    display: inline-block;
+    border-left: 2px solid var(--neon-orange);
+    background: var(--raw-charcoal);
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-family: monospace;
+    color: var(--muted-grey);
+    margin-bottom: 24px;
+}
+
+.stark-display-title {
+    font-size: 3.6rem;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
+.hollow-text {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--raw-white);
+}
+
+.stark-body-copy {
+    font-size: 1.1rem;
+    color: var(--muted-grey);
+    max-width: 550px;
+    line-height: 1.6;
+}
+
+.stark-action-cluster {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+/* Linear Pipeline Architecture (Replaces Grid Completely) */
+.stream-pipeline {
+    border-left: 1px dashed var(--border-steel);
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.pipeline-node {
+    position: relative;
+}
+
+.pipeline-node::before {
+    content: '';
+    position: absolute;
+    left: -35px;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    background: var(--raw-black);
+    border: 2px solid var(--border-steel);
+}
+
+.trace-highlight::before {
+    border-color: var(--neon-orange);
+    background: var(--neon-orange);
+}
+
+.node-meta {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.node-index {
+    font-size: 0.8rem;
+    color: var(--neon-orange);
+}
+
+.node-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-grey);
+}
+
+.node-data-output {
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--raw-white);
+}
+
+.unit-pulse {
+    font-size: 0.9rem;
+    color: var(--neon-green);
+    font-family: monospace;
+}
+
+.text-neon {
+    color: var(--neon-green);
+}
+
+/* Horizontal Spec Grid Replacement */
+.horizontal-spec-list {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    border-top: 1px solid var(--border-steel);
+    padding-top: 30px;
+}
+
+.spec-unit {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-grey);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.spec-dot {
+    width: 4px;
+    height: 4px;
+    background-color: var(--border-steel);
+}
